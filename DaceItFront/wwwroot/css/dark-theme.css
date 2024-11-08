@@ -1,0 +1,27 @@
+html {
+  font-size: 14px;
+}
+
+body {
+    background-color: #121212; /* ÷вет фона */
+    color: #ffffff; /* ÷вет текста */
+}
+
+.navbar {
+    background-color: #1f1f1f; /* ÷вет фона навигационной панели */
+}
+
+.card {
+    background-color: #2a2a2a; /* ÷вет фона карточек */
+    border: 1px solid #444; /* ÷вет границы карточек */
+}
+
+.btn-primary {
+    background-color: #007bff; /* ÷вет кнопки */
+    border-color: #007bff; /* ÷вет границы кнопки */
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* ÷вет кнопки при наведении */
+        border-color: #0056b3; /* ÷вет границы кнопки при наведении */
+    }

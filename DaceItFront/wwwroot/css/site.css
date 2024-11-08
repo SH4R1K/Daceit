@@ -1,3 +1,8 @@
+:root {
+    --text-color: #121212;
+    --background: #FFFFFF;
+}
+
 html {
   font-size: 14px;
 }
