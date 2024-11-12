@@ -1,3 +1,6 @@
+using DaceItFront.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DaceItFront
 {
     public class Program
@@ -7,6 +10,11 @@ namespace DaceItFront
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllersWithViews();
+            
+            builder.Services.AddDbContext<DaceitContext>(options =>
+            {
+                options.UseMySQL(builder.Configuration.GetConnectionString("mysqlconnstring"));
+            });
 
             var app = builder.Build();
 
