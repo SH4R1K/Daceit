@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #121212; /* ÷вет фона */
+    background-color: rgb(36, 36, 36); /* ÷вет фона */
     color: #ffffff; /* ÷вет текста */
 }
 
@@ -12,7 +12,7 @@ body {
 }
 
 .card {
-    background-color: #2a2a2a; /* ÷вет фона карточек */
+    background-color: rgb(36, 36, 36); /* ÷вет фона карточек */
     border: 1px solid #444; /* ÷вет границы карточек */
 }
 
@@ -25,3 +25,8 @@ body {
         background-color: #0056b3; /* ÷вет кнопки при наведении */
         border-color: #0056b3; /* ÷вет границы кнопки при наведении */
     }
+
+input::selection {
+    color: #FFF;
+    background: #0078D4;
+}
