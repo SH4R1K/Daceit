@@ -1,0 +1,29 @@
+﻿@page
+@model DaceItFront.Areas.Identity.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<h2>Вход</h2>
+
+<form asp-page="./Login" method="post">
+    <div>
+        <label asp-for="Input.Email"></label>
+        <input asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Password"></label>
+        <input asp-for="Input.Password" type="password" />
+        <span asp-validation-for="Input.Password"></span>
+    </div>
+    <div>
+        <button type="submit">Войти</button>
+    </div>
+</form>
+
+<div>
+    <p>
+        <a asp-page="./Register">Зарегистрироваться</a>
+    </p>
+</div>

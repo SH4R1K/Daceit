@@ -1,5 +1,8 @@
 using DaceItFront.Data;
+using DaceItFront.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace DaceItFront
 {
@@ -16,6 +19,14 @@ namespace DaceItFront
                 options.UseMySQL(builder.Configuration.GetConnectionString("mysqlconnstring"));
             });
 
+            builder.Services.AddIdentity<Player, IdentityRole>()
+                .AddEntityFrameworkStores<DaceitContext>()
+                .AddDefaultTokenProviders();
+
+            builder.Services.AddControllersWithViews();
+            
+            builder.Services.AddRazorPages(); // Добавьте эту строку
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -27,8 +38,10 @@ namespace DaceItFront
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication(); // Добавьте эту строку
+            app.UseAuthorization(); // И эту строку
 
+            app.MapRazorPages(); // Это должно быть добавлено
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Hub}/{action=Index}/{id?}");
